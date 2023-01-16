@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Models/Environment/Ground.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/Models/Environment/Tree_1.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Entity/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3 )
@@ -124,3 +125,5 @@ shape = SubResource( 2 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.761742, -0.584777, 0.2789, -0.0211241, 0.452669, 0.891428, -0.647536, 0.673147, -0.35717, 0, 12.714, 0 )
 shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
