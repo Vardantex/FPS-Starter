@@ -1,6 +1,8 @@
 extends KinematicBody
 
 
+var canShoot = true
+
 #stats
 var curHp = 10 
 var maxHp = 10 
@@ -24,6 +26,8 @@ var mouseData = Vector2()
 #components
 onready var camera = get_node("Camera")
 onready var muzzle = get_node("Camera/Muzzle")
+onready var bulletScene = load("res://Particles/Bullet.tscn")
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -85,6 +89,13 @@ func _process(delta: float) -> void:
 	#rotate the cam along y axis (left right)
 	rotation_degrees.y -= mouseData.x * lookSensitivity * delta
 	
+	#Check if shot was taken 
+	if Input.is_action_pressed("SHOOT") and ammo > 0:
+		if canShoot == true:
+			shoot()
+	
+	
+	
 	
 	pass
 	
@@ -96,7 +107,23 @@ func _input(event: InputEvent) -> void:
 		mouseData = event.relative
 	
 
+func bulletInterval():
+	canShoot = true
+	pass 
+	
 
+func shoot():
+	$Interval.start()
+	
+	var bullet = bulletScene.instance() 
+	get_node("/root/MainScene").add_child(bullet)
+	
+	#set the location of the bullet to the muzzle
+	bullet.global_transform = muzzle.global_transform
+	
+	ammo -=1
+	canShoot = false
+	
 
 func _ready() -> void:
 	

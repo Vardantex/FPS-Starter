@@ -4,6 +4,7 @@ extends Area
 var speed = 30.0
 var damage = 1 
 
+
 func _process(delta: float) -> void:
 	
 	
