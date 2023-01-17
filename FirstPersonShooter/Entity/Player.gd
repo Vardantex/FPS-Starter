@@ -26,6 +26,10 @@ onready var camera = get_node("Camera")
 onready var muzzle = get_node("Camera/Muzzle")
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("RESTART"):
+		get_tree().reload_current_scene()
+	
 	if Input.is_action_pressed("EXIT"):
 		get_tree().quit()
 	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Models/Environment/Ground.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/Models/Environment/Tree_1.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Entity/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Particles/Bullet.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3 )
@@ -127,3 +128,6 @@ transform = Transform( -0.761742, -0.584777, 0.2789, -0.0211241, 0.452669, 0.891
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="Bullet" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.710831, 2.12231, -1.74877 )
